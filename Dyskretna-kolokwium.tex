@@ -18,8 +18,9 @@
 
 \maketitle
 \begin{abstract}
-Plik źródłowy: https://github.com/kasmar00/PUT-INF1-Notatki/blob/master/Dyskretna-kolokwium.tex \\
 Na podstawie materiałów prof. Formanowicza i dr Sterny prof. PP\\
+W pliku zawarto opracowanie zagadnień poruszanych na ćwiczeniach i obowiązujących na pierwszym kolokwium. W niektórych miejscach (np. prawa rachunku zdań) pominięto rozległe symbole, gdyż większość z nich jest oczywista lub została wyniesiona ze szkoły średniej, w ich miejsce podano odesłania do materiałów od prowadzących.\\
+Źródło: https://github.com/kasmar00/PUT-INF1-Notatki/blob/master/Dyskretna-kolokwium.tex \\
 \end{abstract}
 
 \section{Logika}
@@ -92,6 +93,7 @@ Permutacja pusta ($k=0$) $P(n,0)=1$ \\
 Permutacja elementów zbioru ($n=k$) $P(n, n)=n!$
 \subsection{Permutacja z powtórzeniami} $P(n,n_1,n_2,\dots ,n_k)=\frac{n!}{n_1!*n_2!*\dots *n_k!}= {{n}\choose{n_1,n_2,\dots, n_k}}$ \\
 Permutacją $n$ elementową z powtórzeniami zbioru  $A=a_1,a_2,\dots,a_k$, w której element $a_1$ powtarza się $n_1$ razy, $\dots$, element $a_k$ powtarza się $n_k$ razy, ($n_1+ \dots + n_k= n$), nazywamy każdy ciąg $n$ wyrazowy, w którym poszczególne elementy zbioru $A$ powtarzają się wskazaną liczbę razy.\\
+
 $P(n,n_1,n_2,\dots ,n_k)$ to liczba: 
 \begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
  \item $n$ elementowych permutacji z powtórzeniami elementów $k$ typów
@@ -103,7 +105,7 @@ $k$ elementowy podzbiór zbioru $n$ elementowego
 \subsection{Kombinacja z powtórzeniami} $\bar C(n,k)={{n+k-1}\choose{k}}=\frac{(n+k-1)!}{k!(n-1)!}$ \\
 Zestaw $k$ elementów, z których każdy należy do jednego z $n$ rodzajów elementów
 Liczba $\bar C(n,k)$ określa liczbę:
-\begin{itemize}
+\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
  \item $k$ elementowych kombinacji z powtórzeniami ze zbioru $n$ elementowego
  \item rozmieszczeń $k$ identycznych elementów w $n$ rozróżnialnych pudełkach
  \item całkowitoliczbowych rozwiązań równania postaci $x_1+x_2+\dots +x_n=k$ gdzie $x_i>0$
@@ -113,21 +115,52 @@ Liczba $\bar C(n,k)$ określa liczbę:
 \begin{tabular}{c|c|c|c}
 uporządkowanie & powtórzenia & obiekt & liczba\\
 \hline 
- + & - & wariacja bez powtórzeń & $V(n,k)=\frac{n!}{(n-k)!}$ \\
- + & + & wariacja z powtórzeniami & $\bar V (n,k)=n^k$ \\
- - & - & kombinacja bez powtórzeń & $C(n,k)={{n}\choose{k}}$ \\
- - & + & kombinacja z powtórzeniami & $\bar C(n,k)={{n+k-1}\choose{k}}$ \\
+ + & $-$ & wariacja bez powtórzeń & $V(n,k)=\frac{n!}{(n-k)!}$ \\
+ + & + & wariacja z powtórzeniami & $\bar V(n,k)=n^k$ \\
+ $-$ & $-$ & kombinacja bez powtórzeń & $C(n,k)={{n}\choose{k}}$ \\
+ $-$ & + & kombinacja z powtórzeniami & $\bar C(n,k)={{n+k-1}\choose{k}}$ \\
 \end{tabular} \\
 \begin{tabular}{c|c|c|c}
  k elementów & n pudełek & obiekt & liczba \\
  \hline
- identyczne & rozróżnialne & kombinacja z powtórzeniami & $\bar C(n,k)={{n+k-1}\choose{k}}$\\
- rozróżnialne & rozróżnialne & wariacja z powtórzeniami & $\bar V (n,k)=n^k$ \\
+ identyczne & rozróżnialne & kombinacja z powtórzeniami & $\overline{C}(n,k)={{n+k-1}\choose{k}}$\\
+ rozróżnialne & rozróżnialne & wariacja z powtórzeniami & $\bar V(n,k)=n^k$ \\
  \hline
  rozróżnialne & identyczne & liczby Stirlinga 2-giego rodzaju & ? \\
  identyczne & identyczne & podziały liczb całkowitych & ?\\
 \end{tabular}
 
+\section{Indukcja}
+
+\textbf{Współczynnik dwumianowy}: symbol Newtona ${{n}\choose {k}}=\frac{n!}{k!(n-k)!}$ \\
+\textbf{Wzór na n-tą potęgę dwumianu}: $(x+y)^n=\sum_{k=0}^n {{n}\choose{k}}x^ky^{n-k}$ \\
+${{n}\choose{k}}={{n}\choose{n-k}}$ (reguła symetrii), 
+${{n}\choose{k}}={{n-1}\choose{k}}+{{n-1}\choose{k-1}}$ (reguła dodawania), 
+$k{{n}\choose{k}}=n{{n-1}\choose{k-1}}$ (reguła pochłaniania), 
+${{m+n}\choose{k}}=\sum_{s=0}^k {{n}\choose{s}}{{n}\choose{k-s}}$ (tożsamość Cauchy'ego) \\
+\textbf{Trójkąt Pascala}: metoda obliczania wartości współczynnika Newtona {reguła dodawania}\\
+\textbf{Współczynnik wielomianowy}: ${{n}\choose{k_1, k_2, \dots ,k_r}}={{n}\choose{k_1}}{{n-k_1}\choose{k_2}}{{n-k_1-k_2}\choose{k_3}}\dots {{n-k_1-\hdots -k_{r-1}}\choose{k_r}}=\frac{n!}{k!k_2!\dots k_r!}$, występuje w rozwinięciu wielomianu $(x_1+x_2+\dots +x_r)^n=\sum {{n}\choose{k_1, k_2, \dots ,k_r}}x_1^{k_1}x_2^{k_2}\dots x_ r^{k_r}$
+\subsection{Pierwsza zasada indukcji matematycznej}
+Inaczej \textbf{Zasada skończonej indukcji matematycznej} \\
+Jeśli $S(1)$ jest prawdziwe i dla dowolnego $k \in \mathbb{P}$, $S(k+1)$ jest prawdziwe, jeśli $S(k)$ jest prawdziwe, to $S(n)$ jest prawdziwe dla wszystkich $n \in \mathbb{P}$ \\ %formalny zapis u Sterny na wykładzie
+
+\textbf{Dowód indukcyjny}
+\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
+ \item Sformułowanie hipotezy indukcyjnej $S(k)$
+ \item Dowiedzenie prawdziwości warunku początkowego $S(n_0)$
+ \item dowiedzenia prawdziwości kroku indukcyjnego (prawdziwości implikacji $S(k)\rightarrow S(k+1)$)
+\end{itemize}
+\subsection{Druga zasada indukcji matematycznej}
+Inaczej \textbf{Zasada silnej indukcji matematycznej} \\
+Jeśli $S(n_0), S(n_0+1), \dots ,S(n_1-1), S(n_1)$ są prawdziwe i dla dowolnego $k\in\mathbb{P}, k\geq n_1$ $S(k+1)$ jest prawdziwe, jeśli $S(n_0), S(n_0+1), \dots ,S(k-1), S(k)$ są prawdziwe to $S(n)$ jest prawdziwe dla wszystich $n \in\mathbb{P}, n\geq n_0$. (przy założeniu że: $n_0, n_1 \in\mathbb{P}$, $n_0\leq n_1$) \\
+Zasadę tą stosuje się:
+\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt
+ \item jeśli prawdziwość analizowanego zdania wynika z prawdziwości pewnych zdań poprzedzających
+ \item jeśli krok indukcyjny nie jest prawdziwy dla pewnych początkowych wartości $k$
+ \item w analizie definicji rekurencyjnych, w których pewne wyrazy określone są za pomocą wyrazów innych niż bezpośrednio poprzedzające
+\end{itemize}
+
+\section{Rekurencja}
 
 
 
