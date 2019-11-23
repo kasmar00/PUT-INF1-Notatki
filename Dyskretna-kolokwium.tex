@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{textcomp}
 
 
 %opening
@@ -17,7 +18,8 @@
 
 \maketitle
 \begin{abstract}
- 
+Plik źródłowy: https://github.com/kasmar00/PUT-INF1-Notatki/blob/master/Dyskretna-kolokwium.tex \\
+Na podstawie materiałów prof. Formanowicza i dr Sterny prof. PP\\
 \end{abstract}
 
 \section{Logika}
@@ -52,7 +54,81 @@ Słowo-skończony ciąg liter zbioru $\Sigma$ \\
 Zbiór $\Sigma ^*$-zbiór wszystich słów zbudowanych z liter alfabetu $\Sigma$ \\
 Język nad alfabetem $\Sigma$-dowolny podzbiór zbioru $\Sigma ^*$ 
 \subsection{Prawa algebry zbiorów (str5 PF 1)}
-\section{}
+
+\section{Relacje}
+\textbf{Para uporządkowana} zbiór  dwuelementowy, gdzie jeden z elemtów wyróżniono \\
+\textbf{Iloczyn kartezjański} $[\langle x,y \rangle \in X \times Y] \iff [(x\in X)\wedge (y\in Y)]$ \\
+\textbf{Relacją} $\rho$ w iloczynie kartezjańskim $X \times Y$ nazwymamy dowolny podzbiór tego iloczynu \\
+\textbf{Dziedzina relacji}: zbiór poprzedników w parach relacji (oznaczamy $D_\rho$) \\
+\textbf{Przeciwdziedzina relacji}: zbiór następników w parach relacji (oznaczamy $R_\rho$)
+\subsection{Rodzaje relacji}
+$\rho \subseteq X \times X$ (Relacja w zbiorze $X$)\\
+\textbf{Zwrotna}: $\forall_{x \in X} \langle x, x \rangle \in \rho $ \\
+\textbf{Symetryczna}: $\forall_{x \in X} \forall_{y\in X}\langle x,y \rangle \in \rho \implies \langle y, x \rangle \in \rho $ \\
+\textbf{Przechodnia}: $\forall_{x \in X} \forall_{y\in X} \forall_{z\in X} [(\langle x, y \rangle \in \rho \wedge \langle y, z \rangle \in \rho ) \implies \langle x, z \rangle \in \rho ]$ \\
+\textbf{Antysymetryczna}: $\forall_{x \in X} \forall_{y\in X} [(\langle x, y \rangle \in \rho \wedge \langle y, x \rangle \in \rho ) \implies x=y$ \\
+\textbf{Spójna}: $\forall_{x \in X}\forall_{y\in X} \langle x,y \rangle\in\rho \vee \langle y,x\rangle\in\rho$\\
+\textbf{Przeciwzwrotna}: $\nexists_{x\in X} \langle x,x\rangle \in \rho$\\
+\\
+Relacja \textbf{Liniowo porządukjąca zbiór $X$} to relacja jednoczesnie zwrotna, przechodnia, antysymetryczna i spójna \\
+\textbf{Relacja równoważności}: jednoczesnie zwrotna, symetryczna i przechodnia (oznaczamy $ \sim $)
+
+\section{Funkcje}
+Relację $\rho \subseteq X \times Y$ spełniającą warunki: $\forall_{x\in X} \exists_{y \in Y} \langle x, y \rangle \in \rho $ oraz $\forall_{x\in X} \forall_{y \in Y} \forall_{z \in Y} \langle x,y \rangle \in \rho \wedge\langle x, z \rangle \in \rho \implies y=z$ nazywamy funkcją
+
+\subsection{UZUPEŁNIĆ!}
+
+\section{Kombinatoryka}
+\textbf{Prawo sumy}: $|A \cup B|=|A|+|B|-|A \cap B|$ (liczba sposobów na jakie można wybrać element należący do jednego z dwu zbiorów) \\
+\textbf{Prawo iloczynu}: $|A\times B|=|A|*|B|$ liczba sposobów na jakie można wybrać uporządkowaną parę elementów jest równa liczbie możliwości na jakie można wybrac pierwszy element przemnożonej przez liczbe możliwości na jakie można wybrac drugi element 
+\subsection{Wariacja z powtórzeniami} $\bar V (n, k)=n^k$ \\
+Liczba sposobów na jakie można utworzyć $k$ wyrazowy ciąg z $n$ elementowego zbioru (wyrazy mogą sie powtarzać) \\
+Liczba możliwych rozmieszczeń $k$ rozróżnialnych elementów w $n$ rozróżnialnych pudełkach 
+\subsection{Wariacja bez powtórzeń} $V(n,k)=\frac{n!}{n-k!}$ \\
+Liczba sposobów na jakie można utworzyć $k$ elementowy ciąg z $n$ elementowego zbioru (wyarzy nie możą się powtarzać)
+\subsection{Permutacja bez powtórzeń} $P(n,k)=V(n,k)=\frac{n!}{n-k!}$\\
+Liniowe uporządkowanie $k$ rozróżnialnych elementów ze zbioru $n$ elementowego \\
+Permutacja pusta ($k=0$) $P(n,0)=1$ \\
+Permutacja elementów zbioru ($n=k$) $P(n, n)=n!$
+\subsection{Permutacja z powtórzeniami} $P(n,n_1,n_2,\dots ,n_k)=\frac{n!}{n_1!*n_2!*\dots *n_k!}= {{n}\choose{n_1,n_2,\dots, n_k}}$ \\
+Permutacją $n$ elementową z powtórzeniami zbioru  $A=a_1,a_2,\dots,a_k$, w której element $a_1$ powtarza się $n_1$ razy, $\dots$, element $a_k$ powtarza się $n_k$ razy, ($n_1+ \dots + n_k= n$), nazywamy każdy ciąg $n$ wyrazowy, w którym poszczególne elementy zbioru $A$ powtarzają się wskazaną liczbę razy.\\
+$P(n,n_1,n_2,\dots ,n_k)$ to liczba: 
+\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
+ \item $n$ elementowych permutacji z powtórzeniami elementów $k$ typów
+ \item rozmieszczeń $n$ rozróżnialnych obiektów w $k$ rozróżnialnych pudełkach, takich że w $i$-tym pudełku znajduje się $n_i$ obiektów,
+ \item podziałów uporządkowanych zbioru.
+\end{itemize}
+\subsection{Kombinacja bez powtórzeń} $C(n,k)=\frac{n!}{(n-k)!*k!}={{n}\choose{k}}$ \\
+$k$ elementowy podzbiór zbioru $n$ elementowego 
+\subsection{Kombinacja z powtórzeniami} $\bar C(n,k)={{n+k-1}\choose{k}}=\frac{(n+k-1)!}{k!(n-1)!}$ \\
+Zestaw $k$ elementów, z których każdy należy do jednego z $n$ rodzajów elementów
+Liczba $\bar C(n,k)$ określa liczbę:
+\begin{itemize}
+ \item $k$ elementowych kombinacji z powtórzeniami ze zbioru $n$ elementowego
+ \item rozmieszczeń $k$ identycznych elementów w $n$ rozróżnialnych pudełkach
+ \item całkowitoliczbowych rozwiązań równania postaci $x_1+x_2+\dots +x_n=k$ gdzie $x_i>0$
+\end{itemize}
+
+\subsection{Tabelki}
+\begin{tabular}{c|c|c|c}
+uporządkowanie & powtórzenia & obiekt & liczba\\
+\hline 
+ + & - & wariacja bez powtórzeń & $V(n,k)=\frac{n!}{(n-k)!}$ \\
+ + & + & wariacja z powtórzeniami & $\bar V (n,k)=n^k$ \\
+ - & - & kombinacja bez powtórzeń & $C(n,k)={{n}\choose{k}}$ \\
+ - & + & kombinacja z powtórzeniami & $\bar C(n,k)={{n+k-1}\choose{k}}$ \\
+\end{tabular} \\
+\begin{tabular}{c|c|c|c}
+ k elementów & n pudełek & obiekt & liczba \\
+ \hline
+ identyczne & rozróżnialne & kombinacja z powtórzeniami & $\bar C(n,k)={{n+k-1}\choose{k}}$\\
+ rozróżnialne & rozróżnialne & wariacja z powtórzeniami & $\bar V (n,k)=n^k$ \\
+ \hline
+ rozróżnialne & identyczne & liczby Stirlinga 2-giego rodzaju & ? \\
+ identyczne & identyczne & podziały liczb całkowitych & ?\\
+\end{tabular}
+
+
 
 
 \end{document}
