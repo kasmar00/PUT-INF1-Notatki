@@ -161,7 +161,24 @@ Zasadę tą stosuje się:
 \end{itemize}
 
 \section{Rekurencja}
-
+Ciąg jest zdefiniowany rekurencyjnie jeśli: określony jest skońcozny zbiór wyrazów ciągu (warunek początkowy), pozostałe wyrazy zdefiniowane są za pomocą poprzednich wyrazów (warunek rekurencyjny). Poprawność definicji dowodzi się w oparciu o indukcję matematyczną.
+\subsection{Wzory jawne}
+Nie są znane metody ogólne rozwiązywania zależności rekurencyjnych niejednorodnych.
+\subsubsection{Zależność pierwszego rzędu}
+$a_{n+1}+ca_n=f(n)$ \\
+Gdzie: $n\in\mathbb{N}$, $c=const$, $f(n)$-pewna funkcja określona na zbiorze $\mathbb{N}$\\
+Gdy $\forall_{n \in\mathbb{N}}f(n)=0$ to zależność nazywamy jednorodną ($a_{n+1}=da_n$) (np. $a_{n+1}=3a_n,  a_0=5, n\geq0$) \\
+Dla pozostałych funkcji jest to zależność niejednorodna (np. $a_n=a_{n-1}+(n-1), a_1=0, n\geq2$).
+\textbf{Liniowe jednorodne zależności 1-szego rzędu}: \\
+Wzór rekurencyjny: $a_{n_+1}=da_n$ dla $n\geq0, d=const, a_0=const$ \\
+Wzór jawny: $a_n=a_0d^n$
+\subsubsection{Zależność drugiego rzędu}
+$c_na_n+c_{n-1}a_{n-1}+c_{n-2}a_{n-2}=f(n)$\\
+Gdzie: $n\in\mathbb{N}, n\geq2$, $c_n,c_{n-1}, c_{n-2}\in\mathbb{R}, c_n\neq0, c_n-2\neq0$, $f(n)$-pewna funkcja określona na zbiorze liczb naturalnych.\\
+Gdy $\forall_{n \in\mathbb{N}}f(n)=0$ to zależność nazywamy jednorodną, dla pozostałych funkcji  jest to zależność niejednorodna \\
+\textbf{Liniowe jednorodne zależności 2-szego rzędu}\\
+\textbf{Liniowe jednorodne zależności k-szego rzędu}\\
+\section{Liczby Szczególne}
 
 
 \end{document}
