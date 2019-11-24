@@ -9,6 +9,9 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 
+\DeclareRobustCommand{\Stirling}{\genfrac \{ \} {0pt}{}} %liczby stirlinga 2-giego rodzaju
+\DeclareRobustCommand{\stirling}{\genfrac [ ] {0pt}{}} %liczby stirlinga 1-szego rodzaju
+
 
 %opening
 \title{Matematyka Dyskretna-Kompendium-Kolokwium 1}
@@ -188,7 +191,78 @@ Uogólnienie z drugiego rzędu, szczegóły u Sterny na prezentacji
 \subsection{Problemy rekurencyjne}
 \textbf{Wieże z Hanoi}: w jakiej minimalnej liczbie ruchów, $T_n$, można przenieść wszystkie krązki z jednego pręta na drugi, przenosząc je pojedynczo i nigdy nie kładąc większego na mniejszy?\\
 $T_n=2T_{n-1}+1, T_0=0$ (zależność niejednorodna, wzór jawny: $T_n=2^n-1$)
+
 \section{Liczby Szczególne}
+%na egzamin liczby eulera, euklidesa, mersennea
+\subsection{Liczby Stirlinga drugiego rodzaju}
+$S(n,k)=\Stirling{n}{k}$ liczba sposobów podziału zbioru $n$ elementowego na $k$ nie pustych podzbiorów (również: liczba rozmieszczeń n rozróżnialnych obiektów w k identyczntych pudełkach, zakładając że pudełka nie mogą być puste).\\
+\textbf{Definicja}\\
+$\Stirling{n}{k}=\Stirling{n-1}{k-1}+k\Stirling{n-1}{k}, 0<k<n$ \\
+$\Stirling{n}{n}=1, n\geq0$ $\Stirling{n}{0}=0, n>0$ \\
+\textbf{Wzór jawny}: $S(n,k)=\Stirling{n}{k}=\frac{1}{k!}\sum_{i=0}^k(-1)^i{{k}\choose{k-i}}(k-i)^n$ \\
+Wartości wygodnie wyznacza się korzsytając z trójkąta liczb stirlinga drugiego rodzaju:\\
+\begin{tabular}{|r|r|r|r|r|r|r|r|r|r|} 
+ \hline
+ n\textbackslash k & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\ \hline
+ 0&1&&&&&&&& \\ \hline
+ 1&0&1&&&&&&&\\ \hline
+ 2&0&1&1&&&&&&\\ \hline
+ 3&0&1&3&1&&&&&\\ \hline
+ 4&0&1&7&6&1&&&&\\ \hline
+ 5&0&1&15&25&10&1&&&\\ \hline
+ 6&0&1&31&90&65&15&1&&\\ \hline
+ 7&0&1&\textbf{63}&\textbf{301}&350&140&21&1&\\ \hline
+ 8&0&1&127&\textbf{966}&1701&1050&266&28&1\\ \hline
+\end{tabular}
+np. $\Stirling{8}{3}=\Stirling{7}{2}+3\Stirling{7}{3}$\\
+Interpretacje:\\
+\begin{tabular}{c|c|c}
+ Rozróżnialność k pudełek & Puste pudełka dopuszczalne & Liczba\\ \hline
+ $-$ & $-$ & $S(n,k)$ \\
+ $-$ & + & $\sum_{i=1}^k S(n,i)$ \\
+ + & $-$ & $k! S(n,k)$ \\
+ + & + & $\sum_{i=1}^k\frac{k!}{(k-i)!}S(n,i)$\\
+\end{tabular}
+\subsection{Liczby Bella}
+Liczby Bella określają liczbę wszystkich podziałów zabioru $n$ elementowego: $B_n=\sum^n_{k=0}S(n,k)$
+\subsection{Liczby Stirlinga pierwszego rodzaju}
+$s(n,k)=\stirling{n}{k}$ oznacza liczbę sposobów rozmieszczenia $n$ obiektów w $k$ cyklach (orientacja cyklu jest istotna). \\
+$\stirling{n}{k}=\stirling{n-1}{k-1}+(n-1)\stirling{n-1}{k}, 0<k<n$ \\
+$\stirling{n}{n}=1, n\geq0$ $\stirling{n}{0}=0, n>0$ \\
+Wartości wygodnie wyznacza się korzsytając z trójkąta liczb stirlinga pierwszego rodzaju:\\
+\begin{tabular}{|r|r|r|r|r|r|r|r|r|} 
+ \hline
+ n\textbackslash k & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline
+ 0&1&&&&&&& \\ \hline
+ 1&0&1&&&&&&\\ \hline
+ 2&0&1&1&&&&&\\ \hline
+ 3&0&2&3&1&&&&\\ \hline
+ 4&0&6&11&6&1&&&\\ \hline
+ 5&0&24&50&35&10&1&&\\ \hline
+ 6&0&120&\textbf{274}&\textbf{225}&85&15&1&\\ \hline
+ 7&0&720&1764&\textbf{1624}&735&175&21&1\\ \hline
+\end{tabular}
+np. $\stirling{7}{3}=\stirling{6}{2}+6\stirling{6}{3}=274+6*255=1624$ \\
+Suma każdego wiersza w trójkącie wynosi $n!$ \\
+\textbf{Cykle} stanowią alternatywny zapis permutacji np.\\
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+ pozycja permutacji &1 & 2& 3& 4&5&6&7&8&9\\ \hline
+ element & 3 & 8 &4 &7 &2 &9 &1 & 5 &6 \\
+\end{tabular}
+[1 3 4 7] [2 8 5] [6 9] \\
+Każda permutacja definuje układ cykli i każdy ukłąd cykli odpowiada jednej permutacji.
+\subsection{Liczby harmoniczne} %definicja: k-ta harmoniczna wytwarzana przez strunę skrzypcową jest tonem podstawowym wytwarzanym przez strunę o długości równej 1/k-tej długości struny wyjściowej (ton fali o długości  1/k jest k-tą harmoniczną fali o długości 1)
+Definicja rekurencyjna: $\forall_{n\geq1}H_{n+1}=H_n+\frac{1}{n+1}, H_1=1$ \\
+Definicja jawna: $H_n=\sum_{k=1}^n\frac{1}{k}$ \\
+Liczby harmoniczne są dyskretnym odpowiednikiem $f(x)=ln(x)$ \\
+$\forall_{n\in \mathbb{N}} H_{2^n}\leq1+n$ \\
+$\forall_{n \in \mathbb{P}}\sum_{i=1}^n H_i=(n+1)H_n-n$
+\subsection{Liczby Fibonacciego}
+Definicja rekurencyjna: $\forall_{n\geq2} F_n=f_{n-1}+F_{n-2}, F_0=0, F_1=1$ \\
+Definicja jawna: $F_n=\frac{1}{\sqrt{5}}[(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n]$
+\subsection{Liczby Lucasa}
+Definicja: $\forall_{n\geq2} L_n=L_{n-1} +L_{n-2}, L_0=2, L_1=1$\\
+Własności: $\forall_{n\in\mathbb{P}} L_n=F_{n-1} +F_{n+1}$, $\sum_{i=0}^n l_i=L_{n+2}-1$
 
 
 \end{document}
