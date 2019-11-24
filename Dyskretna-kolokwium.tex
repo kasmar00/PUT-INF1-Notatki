@@ -174,10 +174,20 @@ Wzór rekurencyjny: $a_{n_+1}=da_n$ dla $n\geq0, d=const, a_0=const$ \\
 Wzór jawny: $a_n=a_0d^n$
 \subsubsection{Zależność drugiego rzędu}
 $c_na_n+c_{n-1}a_{n-1}+c_{n-2}a_{n-2}=f(n)$\\
-Gdzie: $n\in\mathbb{N}, n\geq2$, $c_n,c_{n-1}, c_{n-2}\in\mathbb{R}, c_n\neq0, c_n-2\neq0$, $f(n)$-pewna funkcja określona na zbiorze liczb naturalnych.\\
+Gdzie: $n\in\mathbb{N}, n\geq2$, $c_n,c_{n-1}, c_{n-2}\in\mathbb{R}, c_n\neq0, c_{n-2}\neq0$, $f(n)$-pewna funkcja określona na zbiorze liczb naturalnych.\\
 Gdy $\forall_{n \in\mathbb{N}}f(n)=0$ to zależność nazywamy jednorodną, dla pozostałych funkcji  jest to zależność niejednorodna \\
-\textbf{Liniowe jednorodne zależności 2-szego rzędu}\\
-\textbf{Liniowe jednorodne zależności k-szego rzędu}\\
+\textbf{Liniowe jednorodne zależności 2-giego rzędu}\\
+Przewidywane rozwiązanie zależnosći $c_na_n+c_{n-1}a_{n-1}+c_{n-2}a_{n-2}=0$ ma postać $a_n=cr^n$, gdzie $c\neq0, r\neq0$. Pod podstawieniu do zależnosci rekurencyjnej otrzymujemy równanie $c_ncr^n+c_{n-1}cr^{n-1}+c_{n-2}cr^{n-2}=0$ które upraszcza się do \textbf{równania charakterystyczego} postaci: $c_nr^2+c_{n-1}r+c_{n-2}=0$.\\
+Jeśli równanie to, ma dwa różne pierwiastki $r_1, r_2$ to: $a_n=\hat c_1r_1^n+\hat c_2r_2^n$, jeden pierwiastek podwójny $r$ to: $a_n=\hat c_1r^n+\hat c_2nr^n$ (stałe $\hat c_1, \hat c_2$ wyznaczamy z wartości początkowych ciągu).
+\subsubsection{Zależnosć k-tego rzędu}
+$c_na_n+c_{n-1}a_{n-1}+\dots + c_{n-k}a_{n-k}=f(n)$\\
+Gdzie: $n,k\in\mathbb{N}, n\geq k$, $c_n,c_{n-1}, c_k\in\mathbb{R}, c_n\neq0, c_{n-k}\neq0$, $f(n)$-pewna funkcja określona na zbiorze liczb naturalnych.\\
+Gdy $\forall_{n \in\mathbb{N}}f(n)=0$ to zależność nazywamy jednorodną, dla pozostałych funkcji  jest to zależność niejednorodna. \\
+\textbf{Liniowe jednorodne zależności k-tego rzędu}\\
+Uogólnienie z drugiego rzędu, szczegóły u Sterny na prezentacji
+\subsection{Problemy rekurencyjne}
+\textbf{Wieże z Hanoi}: w jakiej minimalnej liczbie ruchów, $T_n$, można przenieść wszystkie krązki z jednego pręta na drugi, przenosząc je pojedynczo i nigdy nie kładąc większego na mniejszy?\\
+$T_n=2T_{n-1}+1, T_0=0$ (zależność niejednorodna, wzór jawny: $T_n=2^n-1$)
 \section{Liczby Szczególne}
 
 
