@@ -70,7 +70,7 @@ $\rho \subseteq X \times X$ (Relacja w zbiorze $X$)\\
 \textbf{Zwrotna}: $\forall_{x \in X} \langle x, x \rangle \in \rho $ \\
 \textbf{Symetryczna}: $\forall_{x \in X} \forall_{y\in X}\langle x,y \rangle \in \rho \implies \langle y, x \rangle \in \rho $ \\
 \textbf{Przechodnia}: $\forall_{x \in X} \forall_{y\in X} \forall_{z\in X} [(\langle x, y \rangle \in \rho \wedge \langle y, z \rangle \in \rho ) \implies \langle x, z \rangle \in \rho ]$ \\
-\textbf{Antysymetryczna}: $\forall_{x \in X} \forall_{y\in X} [(\langle x, y \rangle \in \rho \wedge \langle y, x \rangle \in \rho ) \implies x=y$ \\
+\textbf{Antysymetryczna}: $\forall_{x \in X} \forall_{y\in X} [(\langle x, y \rangle \in \rho \wedge \langle y, x \rangle \in \rho ) \implies x=y]$ \\
 \textbf{Spójna}: $\forall_{x \in X}\forall_{y\in X} \langle x,y \rangle\in\rho \vee \langle y,x\rangle\in\rho$\\
 \textbf{Przeciwzwrotna}: $\nexists_{x\in X} \langle x,x\rangle \in \rho$\\
 \\
@@ -78,10 +78,20 @@ Relacja \textbf{Liniowo porządukjąca zbiór $X$} to relacja jednoczesnie zwrot
 \textbf{Relacja równoważności}: jednoczesnie zwrotna, symetryczna i przechodnia (oznaczamy $ \sim $)
 
 \section{Funkcje}
-Relację $\rho \subseteq X \times Y$ spełniającą warunki: $\forall_{x\in X} \exists_{y \in Y} \langle x, y \rangle \in \rho $ oraz $\forall_{x\in X} \forall_{y \in Y} \forall_{z \in Y} \langle x,y \rangle \in \rho \wedge\langle x, z \rangle \in \rho \implies y=z$ nazywamy funkcją
+Relację $\rho \subseteq X \times Y$ spełniającą warunki: $\forall_{x\in X} \exists_{y \in Y} \langle x, y \rangle \in \rho $ oraz $\forall_{x\in X} \forall_{y \in Y} \forall_{z \in Y} \langle x,y \rangle \in \rho \wedge\langle x, z \rangle \in \rho \implies y=z$ nazywamy funkcją.\\
+Zbiór $X$ nazywamy dziedziną funkcji $f$ i oznaczamy przez $D_f$. Każdy element $x \in X$ nazywamy argumentem funkcji $f$, natomiast $f(x)\in Y$ nazwyamy wartością funkcji $f$ dla argumentu $x$. \\
 
-\subsection{UZUPEŁNIĆ!}
-
+Niech $f:X\rightarrow Y$ oraz $A \subseteq X$.\\
+\textbf{Obraz} zbioru $A$: zbiór wartości jakie przyjmuje funkcja $f$ na zbiorze $A$ oznaczamy przez $f(A)$. $$f(A)=\{ f(x)\in Y:x\in A \}$$
+\textbf{Przeciwdziedzina} funkcji $f$: Zbiór $f(X)$ będący podzbiorem zbioru $Y$ oznaczamy $R_f$. $$R_f=\{f(x)\in Y: x\in D_f\}$$
+Funkcja \textbf{różnowartościowa} (na zbiorze $A$) $\forall_{x_1,x_2\in A} x_1\neq x_2  \Rightarrow f(x_1)\neq f(x_2)$. Jeżeli $A=X$ to $f$ jest funkcją różnowartościową.\\
+Jeżeli $R_f=Y$, tzn. jeżeli każdy element zbioru $Y$ jest przyporządkowany co najmniej jednemu elementowi zbioru $X$ to mówimy, że funkcja $f$ przekształca (odwzorowuje) zbiór $X$ \textbf{na} zbiór $Y$.\\
+\textbf{Przekształcenie wzajemnie równoznaczne}: funkcja która jest jednocześnie \textbf{różnowartościowa} i odwzorowuje \textbf{na}.\\
+\textbf{Funkcja odwrotna} (tylko dla funkcji które są przekształceniem wzajemnie jednoznacznym) do $f$ to taka $f^{-1}$, która każdemu $y\in Y$ przyporządkowuje $x \in X$ taki, że $f(x)=y$. Zatem $\forall_{y\in Y} f(f^{-1}(y))=y$ \\
+\textbf{Funkcje złożone} (tu chyba nie trzeba dużo pisać, może dopisze później) \\
+\textbf{Funkcja podłoga} $\forall_{x\in \mathbb{R}} \lfloor x \rfloor=y\in \mathbb{Z}$ takie że $\{ y\leq x \wedge y+1>x \}$ \\
+\textbf{Funkcja sufit} $\forall_{x\in \mathbb{R}} \lceil x \rceil=y\in \mathbb{Z}$ takie że $\{ y\geq x \wedge y-1<x \}$
+\subsection{Rzędzy wielkosci funkcji uzupelnic!!!!}
 \section{Kombinatoryka}
 \textbf{Prawo sumy}: $|A \cup B|=|A|+|B|-|A \cap B|$ (liczba sposobów na jakie można wybrać element należący do jednego z dwu zbiorów) \\
 \textbf{Prawo iloczynu}: $|A\times B|=|A|*|B|$ liczba sposobów na jakie można wybrać uporządkowaną parę elementów jest równa liczbie możliwości na jakie można wybrac pierwszy element przemnożonej przez liczbe możliwości na jakie można wybrac drugi element 
@@ -250,7 +260,7 @@ Suma każdego wiersza w trójkącie wynosi $n!$ \\
  element & 3 & 8 &4 &7 &2 &9 &1 & 5 &6 \\
 \end{tabular}
 [1 3 4 7] [2 8 5] [6 9] \\
-Każda permutacja definuje układ cykli i każdy ukłąd cykli odpowiada jednej permutacji.
+Każda permutacja definuje układ cykli i każdy układ cykli odpowiada dokładnie jednej permutacji.
 \subsection{Liczby harmoniczne} %definicja: k-ta harmoniczna wytwarzana przez strunę skrzypcową jest tonem podstawowym wytwarzanym przez strunę o długości równej 1/k-tej długości struny wyjściowej (ton fali o długości  1/k jest k-tą harmoniczną fali o długości 1)
 Definicja rekurencyjna: $\forall_{n\geq1}H_{n+1}=H_n+\frac{1}{n+1}, H_1=1$ \\
 Definicja jawna: $H_n=\sum_{k=1}^n\frac{1}{k}$ \\
