@@ -274,5 +274,47 @@ Definicja jawna: $F_n=\frac{1}{\sqrt{5}}[(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sq
 Definicja: $\forall_{n\geq2} L_n=L_{n-1} +L_{n-2}, L_0=2, L_1=1$\\
 Własności: $\forall_{n\in\mathbb{P}} L_n=F_{n-1} +F_{n+1}$, $\sum_{i=0}^n l_i=L_{n+2}-1$
 
+\section{Teoria grafów}
+\textbf{Graf skierowany}: $G=(V,A)$ gdzie $V$-zbiór wierzhołków i $A\subseteq X\times X$-zbiór łuków.\\
+\textbf{Graf nieskierowany}: $G=(V,E)$ gdzie $E\subseteq \{\{v_i,v_j\}:\}v_1\in V \wedge v_j\in V$-zbiór krawędzi.\\
+Łuk (krawędź) $(x,y)\in A$ jest \textbf{incydentalny} z wierzhołkami $x$ i $y$.\\
+\textbf{Pętla własna}: łuk (krawędź) postaci $(x,x)$, gdzie $x\in V$. \\
+\textbf{Łańcuch}: sekwencja wierzhołków i krawędzi w grafu mająca końce w wierzhołkach $x, y$ i zawierającą $n$ krawędzi. Jeśli $x=y$ i $n>1$ to jest to \textbf{łańcuch zamknięty} w przeciwnym wypadku \textbf{łańcuch otwarty}.\\
+\textbf{Droga}: łańcuch, w którym nie powtarzają się krawędzie (\textbf{obwód}-zamknięta droga).\\
+\textbf{Ścieżka}: łańcuch, w którym nie powtarzają się wierzhołki (\textbf{cykl}-zamknięta ścieżka).\\
+Jeżeli w grafie (nieskierowanym) istnieje droga między danymi wierzchołkami to istnieje też ścieżka między nimi.\\
+\textbf{Podgraf}: $G_1=(V_1,E_1)$ jest podgrafem $G=(V,E)$ jeżeli: $\emptyset \neq V_1 \wedge E_1 \subseteq E$, gdzie każda krawędź ze zbioru $E_1$ jest incydentalna z wierzchołkami ze zbioru $V_1$\\
+\textbf{Podgraf rozpinający}: jeśli $V_1=V$ \\
+\textbf{Podgraf grafu $G$ indukowany zbiorem wierzchołków $U$}: podgraf, którego zbiorem wierzchołków jest $\emptyset\neq U\subseteq V$ i który zawiera wszystie krawędzie grafu $G$ postaci $\{x,y\}$ dla $x,y \in U$. \\
+\textbf{Graf spójny}: posiada ścieżkę pomiedzy dowolnymi dwoma wierzchołkami.\\
+Graf nieskierowany skojarzony z grafem skierowanym $G$, to taki graf w którym usunięto zwroty łuków, a następnie zduplikowane krawędzie. Jeśli graf skojarzony z grafem skierowanym jest spójny, to graf skierowany też jest spójny. \\
+\textbf{Graf niespójny} to taki, który nie jest spójny.\\
+Każdy graf niespójny składa się z dwóch lub więcej grafów spójnych. Każdy z tych podgrafów nazywamy \textbf{składową} grafu. Liczba składowych grafu $G$ oznaczana jest przez $\kappa(G)$. \\
+\textbf{Multigraf}: dla pewnej pary wierzchołków istnieje więcej niż jeden łuk (krawędź).\\
+\textbf{Graf pełny}: nieskierowany graf bez pętli własnych na zbiorze wierzchołków $V$ ($|V|=n$), w którym dla każdej pary $x,y\in V$ istnieje krawędź $\{x,y\}$. Oznaczany przez $K_n$.\\
+\textbf{Dopełnienie} grafu $G$: $\bar G$ będący podgrafem $K_n$, zawierający wszystkie wierchołki $G$ i te krawędzie, których nie ma w $G$.
+\subsection{Izomorfizm grafów}
+Dwa grafy ($G_1=(V_1,E_1),G_2=(V_2,E_2)$ nazywamy \textbf{izomorficznymi} jeśli istnieje  $f: V_1 \rightarrow V_2$ (nazywana izomorfizmem grafów) że dla każdej pary wierzchołków $x,y \in V_1, \{x,y\}\in E_1 \Leftrightarrow \{f(x),f(y)\} \in E_2$
+
+\subsection{Grafy planarne i dwudzielne}
+\textbf{Graf planarny}: graf który można narysować na płaszyźnie w taki sposób, że żadne z jego łuków (krawędzi) nie przecinają się.\\
+\textbf{Graf dwudzielny}: $G(V,E)$ gdzie $V=V_1\cup V_2$, $V_1\cap V_2=\emptyset$ oraz dla każdej krawędzi $\{x,y\}\in E$ zachodzi $x\in V_1 \wedge y\in V_2$. Oznaczamy $K_{m,n}$ gdzie $m=|V_1|, n=|V_2|$ (Każdy wierzchołek z $V_1$ jest połączony krawędzia z każdym wierchołkiem z $V_2$)\\
+\textbf{Elementarny podział} grafu $G$ następuje, gdy z $G$ usuwamy krawędź $e=\{x,u\}$ i od grafu $G-e$ dodawane są krawędzie $\{x,u\}$ oraz $\{u,y\}$ (gdzie $u \notin V$).\\
+Dwa grafy są \textbf{homeomorficzne} jeśli są izomorficzne lub jeżeli mogą zostać otrzymane z tego samego grafu (nieskierowanego, bez pętli własnych) w wyniku wykonania sekwencji elementarnych podziałów.\\
+\textbf{Twierdzenie Kuratowskiego}: Graf nie jest planarny wtedy i tylko wtedy, gdy zawiera podgraf homeomorficzny do $K_3$ lub $K_{3,3}$.
+\subsection{Grafy Eulera i Hamiltona}
+$G=(V,E)$-(multi)graf nieskierowany\\
+\textbf{Stopień} wierzchołka $v$ grafu $G$ ($deg(v)$) jest liczbą krawędz
+i incydentalnych z $v$. (Pętlę własną traktujemy jako dwie krawędzie incydentalne z wierzchołkiem.)\\
+$\sum_{v\in V} deg(v)=2|E|$ (wniosek: dla $G$ liczba wierzchołków o stopniu nieparzystym jest parzysta)\\
+
+$G=(V,E)$-(multi)graf nieskierowany bez wierzchołków izolowanych\\
+\textbf{Obwód Eulera} w grafie $G$ jest to obwód, który przechodzi przez każdą krawędź grafu $G$ dokładnie raz.\\
+\textbf{Droga Eulera} otwarta droga między pewną parą wierzchołków która przechodzi przez każdą krawędź grafu $G$ dokładnie raz.\\
+\textbf{Graf Eulera}: graf zawierający obwód Eulera\\
+$G$ zawiera obwód Eulera $\Leftrightarrow$ $G$ jest spójny i każdy wierzchołek $G$ ma parzysty stopień. \\
+$G$ zawiera drogę Eulera $\Leftrightarrow$ $G$ jest spójny i dokładnie dwa wierchołki mają nieparzysty stopień. \\
+
+
 
 \end{document}
