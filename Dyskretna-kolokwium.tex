@@ -375,6 +375,22 @@ Jeżeli $a,b\in\mathbb{P}$ oraz $p$ jest liczbą pierwszą, to $p|ab\Rightarrow 
 \textbf{Twierdzenie Landaua}: Niech $b_1, b_2,\hdots,b_n$ będą liczbami całkowitymi. Liczby te są wynikiem pewnego turnieju z udziałem $n$ gracy wtw. gdy $b_1+b_2+\hdots+b_n={n\choose2}$ oraz dla $1\leq r \leq n$ każde $r$ spośród liczb $b_1, b_2,\hdots,b_n$ sumuje się do co najmniej $r\choose2$
 %minimaks, harem, przepływy, przekroje itp...
 \section{Zaawansowane metody zliczania}
+\subsection{Zasada włączania i wyłączania}
+	$|A_1\cup A_2| = |A_1| + |A_2| -|A_1\cap A_2|$ \\
+	$|A_1\cup A_2\cup A_3| = |A_1| + |A_2| + |A_3|-|A_1\cap A_2| -|A_1\cap A_3| -|A_2\cap A_3|+ |A_1\cap A_2\cap A_3|$\\
+	Aby znaleźć liczbę elementów zbioru $|A_1\cap A_2\cap \hdots \cap A_3|$ należy zanalizować wszystkie możliwe przecięcia (części wspólne) zbiorów z rodziny $(A_1, A_2, \dots ,A_n)$ i odać liczność przecięć nieparzystej liczby zbiorów oraz odjąć liczność przecięć nieparzystej liczby zbiorów.\\
+	$\left| \bigcup\limits_{i=1}^n A_i\right|=\sum\limits_{I\in\mathbb{P}_+(I)} (-1)^{|I|+1} \left| \bigcap\limits_{i\in I} A_i \right|$
+\subsection{Zasada szufladkowa Dirichleta}
+	Jeśli $m$ przemiotów umieszcza się w $n$ szufladkach i $m>n$, to do jednej szufladki trafi więcej niż jeden przedmiot.\\
+	Jeśli skońcozny zbiór $S$ jest podzielony na $k$ rozłącznych niepustych podzbiorów, to co najmniej jeden z tych podzbiorów ma $\frac{|S|}{k}$ elementów lub więcej.
+	%uogólniona
+\subsection{Zasada dwoistości}
+	Zasada dwoistości nie jest formalną zasadą, ale często stosowaną metodą dowodzenia.\\
+	Zasada umożliwia wykluczanie pewnych sytuacji dzięki wykorzystaniu przeciwstawności (dwoistości) np.:
+	\begin{itemize}
+		\item białe - czarne 
+		\item parzyste - nieparzyste
+	\end{itemize}
 \section{Kwadraty łacińskie}
 \section{Funkcje tworzące}
 \section{Wielomiany szachowe}
