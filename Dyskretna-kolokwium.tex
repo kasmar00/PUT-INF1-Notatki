@@ -128,7 +128,7 @@ Liczba $\bar C(n,k)$ określa liczbę:
 \begin{tabular}{c|c|c|c}
 uporządkowanie & powtórzenia & obiekt & liczba\\
 \hline 
- + & $-$ & wariacja bez powtórzeń & $V(n,k)=\frac{n!}{(n-k)!}$ \\
+ \checkmark & $-$ & wariacja bez powtórzeń & $V(n,k)=\frac{n!}{(n-k)!}$ \\
  + & + & wariacja z powtórzeniami & $\bar V(n,k)=n^k$ \\
  $-$ & $-$ & kombinacja bez powtórzeń & $C(n,k)={{n}\choose{k}}$ \\
  $-$ & + & kombinacja z powtórzeniami & $\bar C(n,k)={{n+k-1}\choose{k}}$ \\
@@ -299,7 +299,7 @@ Dwa grafy ($G_1=(V_1,E_1),G_2=(V_2,E_2)$ nazywamy \textbf{izomorficznymi} jeśli
 \subsection{Grafy planarne i dwudzielne}
 \textbf{Graf planarny}: graf który można narysować na płaszyźnie w taki sposób, że żadne z jego łuków (krawędzi) nie przecinają się.\\
 \textbf{Graf dwudzielny}: $G(V,E)$ gdzie $V=V_1\cup V_2$, $V_1\cap V_2=\emptyset$ oraz dla każdej krawędzi $\{x,y\}\in E$ zachodzi $x\in V_1 \wedge y\in V_2$. Oznaczamy $K_{m,n}$ gdzie $m=|V_1|, n=|V_2|$ (Każdy wierzchołek z $V_1$ jest połączony krawędzia z każdym wierchołkiem z $V_2$)\\
-\textbf{Elementarny podział} grafu $G$ następuje, gdy z $G$ usuwamy krawędź $e=\{x,u\}$ i od grafu $G-e$ dodawane są krawędzie $\{x,u\}$ oraz $\{u,y\}$ (gdzie $u \notin V$).\\
+\textbf{Elementarny podział} grafu $G$ następuje, gdy z $G$ usuwamy krawędź $e=\{x,y\}$ i od grafu $G-e$ dodawane są krawędzie $\{x,u\}$ oraz $\{u,y\}$ (gdzie $u \notin V$).\\
 Dwa grafy są \textbf{homeomorficzne} jeśli są izomorficzne lub jeżeli mogą zostać otrzymane z tego samego grafu (nieskierowanego, bez pętli własnych) w wyniku wykonania sekwencji elementarnych podziałów.\\
 \textbf{Twierdzenie Kuratowskiego}: Graf nie jest planarny wtedy i tylko wtedy, gdy zawiera podgraf homeomorficzny do $K_3$ lub $K_{3,3}$.
 \subsection{Grafy Eulera i Hamiltona}
@@ -314,7 +314,18 @@ $G=(V,E)$-(multi)graf nieskierowany bez wierzchołków izolowanych\\
 \textbf{Graf Eulera}: graf zawierający obwód Eulera\\
 $G$ zawiera obwód Eulera $\Leftrightarrow$ $G$ jest spójny i każdy wierzchołek $G$ ma parzysty stopień. \\
 $G$ zawiera drogę Eulera $\Leftrightarrow$ $G$ jest spójny i dokładnie dwa wierchołki mają nieparzysty stopień. \\
-
+\textbf{Cykl Hamiltona} w grafie $G$ jest to cykl przechodzący przez każdy wierzchołek grafu dokładnie raz.\\
+\textbf{Ścieżka Hamiltona} ścieżka przechodząca przez każdy wierzchołek grafu dokładnie raz.\\
+\textbf{Graf Hamiltona}: Graf zawierający cykl hamiltona.\\
+\subsection{Drzewa}
+Graf nazywamy drzewem jeśli jest spójny i nie zawiera cykli.\\
+\textbf{Drzewo}: graf składający się z kilku składowych, z których każda jest drzewem.\\
+\textbf{Drzewo rozpinające} grafu $G$: podgraf rozpinający, będący drzewem.\\
+W drzewie miedzy każdą parą wierzchołków istnieje dokładnie jedna scieżka.\\
+Graf nieskierowany jest spójny wtedy i tylko wtedy gdy posiada drzewo rozpinające.\\
+Dla każdego drzewa $T=(V,E)$ zachodzi $|V|=|E|+1$.\\
+%coś o korzeniach...
+\section{Własności liczb całkowitych}\\
 
 
 \end{document}
