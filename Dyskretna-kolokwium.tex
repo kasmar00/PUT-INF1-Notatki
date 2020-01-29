@@ -8,6 +8,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{textcomp}
+\usepackage{enumerate}
 
 \DeclareRobustCommand{\Stirling}{\genfrac \{ \} {0pt}{}} %liczby stirlinga 2-giego rodzaju
 \DeclareRobustCommand{\stirling}{\genfrac [ ] {0pt}{}} %liczby stirlinga 1-szego rodzaju
@@ -316,16 +317,66 @@ $G$ zawiera obwód Eulera $\Leftrightarrow$ $G$ jest spójny i każdy wierzchoł
 $G$ zawiera drogę Eulera $\Leftrightarrow$ $G$ jest spójny i dokładnie dwa wierchołki mają nieparzysty stopień. \\
 \textbf{Cykl Hamiltona} w grafie $G$ jest to cykl przechodzący przez każdy wierzchołek grafu dokładnie raz.\\
 \textbf{Ścieżka Hamiltona} ścieżka przechodząca przez każdy wierzchołek grafu dokładnie raz.\\
-\textbf{Graf Hamiltona}: Graf zawierający cykl hamiltona.\\
+\textbf{Graf Hamiltona}: Graf zawierający cykl hamiltona.
 \subsection{Drzewa}
 Graf nazywamy drzewem jeśli jest spójny i nie zawiera cykli.\\
 \textbf{Drzewo}: graf składający się z kilku składowych, z których każda jest drzewem.\\
 \textbf{Drzewo rozpinające} grafu $G$: podgraf rozpinający, będący drzewem.\\
 W drzewie miedzy każdą parą wierzchołków istnieje dokładnie jedna scieżka.\\
 Graf nieskierowany jest spójny wtedy i tylko wtedy gdy posiada drzewo rozpinające.\\
-Dla każdego drzewa $T=(V,E)$ zachodzi $|V|=|E|+1$.\\
+Dla każdego drzewa $T=(V,E)$ zachodzi $|V|=|E|+1$.
 %coś o korzeniach...
-\section{Własności liczb całkowitych}\\
-
+\section{Własności liczb całkowitych}
+$b|a$ wtw. $\exists_n:a=bn$, $b$ jest \textbf{dzielnikiem} $a$, natomiast $a$ jest \textbf{wielokrotnością} $b$.\\
+Dla dowolnych $a,b,c\in \mathbb{Z}$:
+	\begin{enumerate}[a)]
+		\item $1|a$ oraz $a|0$
+		\item $[(a|b)\wedge(b|a)]\Rightarrow a=\pm b$
+		\item $[(a|b)\wedge(b|c)]\Rightarrow a|c$
+		\item $a|b \Rightarrow a|bx$ dla każdego $x\in\mathbb{Z}$
+		\item jeżeli $x=y+z$ oraz $a$ dzieli dwie z tych liczb to dzieli również trzecią
+		\item $[(a|b)\wedge(a|c)]\Rightarrow a|(bx+cy)$ ($bx+cy$ nazywamy liniową kombinacją $b$ i $c$)(zachodzi również dla wielu zmiennych w nawiasie)
+	\end{enumerate}
+\textbf{Liczby pierwsze}\\
+\textbf{Algorytm dzielenia}: jeżeli $a, b \in \mathbb{Z}$ oraz $b>0$, to istnieją unikalne $q,r\in\mathbb{P}$ takie, że $a=qb+r$, $0\leq r <b$.
+\subsection{Największy wspólny dzielnik}
+	Dla $a, b\in \mathbb{Z}$ dodatnian liczba całkowita $c$ jest \textbf{wspólnym dzielnikiem} jeżeli $c|a$ oraz $c|b$.\\
+	$c\in\mathbb{P}$ jest \textbf{największym wspólnym dzielnikiem} liczb $a, b$ jeżeli $c|a$, $c|b$ oraz dla dowolnego wspołnego dzielnika $d$ liczb $a, b$ zachodzi $d|c$.\\
+	Liczby $a,b$ są \textbf{względnie pierwsze} jeżeli $\gcd(a,b)=1$\\
+	\textbf{Algorytm euklidesa}$$
+	\begin{matrix}
+		a=q_1b+r_1 &0<r_1<b\\
+		b=q_1r_1+r_2 & 0<r_2<r_1\\
+		r_1=q_3r_2+r_3 & 0<r_3<r_2\\
+		\vdots & \vdots \\
+		r_i=q_{i+2}r_{i+1}+r_{i+2} & 0<r_{i+2}<r_{i+1}\\
+		\vdots & \vdots \\
+		r_{k-3}=q_{k-1}r_{k-2}+r_{k-1} & 0<r_{k-1}<r_{k-2}\\
+		r_{k-2}=q_{k}r_{k-1}+r_{k} & 0<r_{k}<r_{k-1}\\
+		r_{k-1}=q_{k+1}r_k
+	\end{matrix}$$\\
+	ostatnia niezerowa reszta $r_k=\gcd(1,b)$\\
+\textbf{Rówananie diofantyczne}: równanie liniowe wymagające całkowitoliczbowych roziązań.\\
+$ax+by=c$ ma rozwiązanie całkowite wtw. gdy $gcd(a,b)|c$
+\subsection{Najmniejsza wspólna wielokrotność}
+\textbf{wspólna wielokrotność}: $c$ jest wspólną wielokrotnością $a$ i $b$ jeśli $c$ jest wielokrotnością zarówno $a$ jak i $b$.\\
+$c$ jest \textbf{najmniejszą wspólną wielokrotnością}, jeżeli jest najmniejszą z liczb będących wielokrotnością $a$ i $b$\\
+$c=lcm(a,b)$ \\
+$ab=lcm(a,b)\times\gcd(a,b)$
+\subsection{Zasadnicze Twierdzenie Arytmetyki}
+Jeżeli $a,b\in\mathbb{P}$ oraz $p$ jest liczbą pierwszą, to $p|ab\Rightarrow p|a \vee p|b$ (zachodzi również dla większej liczby czynników).\\
+\textbf{Zasadnicze Twierdzenie Arytmetyki}: Każda liczba całkowita $n>1$ może zostać zapisana jako iloczyn liczb pierwszych, przy czym istnieje tylko jeden taki iloczyn.
+\section{Transwersale}
+\subsection{Twierdzenie Halla-wersja małżeńska}W grupie kobiet każda kobiera może wybrac męża spośród mężczyzn, których zna, wtw. gdy w każdym podzbiorze kobiet o liczności $r$ kobiety te znają conajmniej $r$ mężczyzn.\\
+\textbf{Rodzina zbiorów} jest to uporządkowana lista zbiorów $A=(A_1,A_2,A_3,\hdots,A_n)$\\
+\textbf{Transwersala} rodziny $A$ jest to zbiór $Y$, gdzie $|Y|=n$, którego elementy mogą zostać zapisane w pewnym porządku, np. $Y=\{ a_1, a_2, a_3,\hdots, a_n\}$ w ten sposób że $a_i\in A_i$.
+\subsection{Turnieje}
+\textbf{Turniej} z udziałem $n$ graczy oanzacoznych kolejenymi liczbami pozytywnymi, jest zbiorem $n\choose2$ uporządkowanych par zawodników. Pary te mogą być traktowane jako wyniki gier między graczami, przy czym pierwsza liczba oznacza zwycięzce gry.\\
+\textbf{Twierdzenie Landaua}: Niech $b_1, b_2,\hdots,b_n$ będą liczbami całkowitymi. Liczby te są wynikiem pewnego turnieju z udziałem $n$ gracy wtw. gdy $b_1+b_2+\hdots+b_n={n\choose2}$ oraz dla $1\leq r \leq n$ każde $r$ spośród liczb $b_1, b_2,\hdots,b_n$ sumuje się do co najmniej $r\choose2$
+%minimaks, harem, przepływy, przekroje itp...
+\section{Zaawansowane metody zliczania}
+\section{Kwadraty łacińskie}
+\section{Funkcje tworzące}
+\section{Wielomiany szachowe}
 
 \end{document}
