@@ -305,15 +305,16 @@ Liczby euklidesa są względnie pierwsze $\gcd(e_n,e_m)=1$
 \subsection{Liczby Mersennea}
 $2^p-1$ gdzie $p$ jest liczbą pierwszą.\\
 Rozwiązanie problemu wież z Hanoi (tzn. liczbę ruchów koniecznych do przełożenia $p$ krążków, dla $p$ będących liczbami pierwszymi).\\
-Istnieje niewiele liczb Mersennea będących liczbami pierwszymi ''
-Znanych jest 59\footnote{prof. Chris K. Caldwell \verb+https://primes.utm.edu/mersenne/index.html#known+} liczb pierwszych Mersennea, największa odpowiada wykładnikowi $p=82589933$ i ma $24 862 048$ cyfr\footnote{\verb+https://www.mersenne.org/primes/?press=M82589933+}
+Istnieje niewiele liczb Mersennea będących liczbami pierwszymi.\\
+Znanych jest 51\footnote{prof. Chris K. Caldwell \verb+https://primes.utm.edu/mersenne/index.html#known+} liczb pierwszych Mersennea, największa odpowiada wykładnikowi $p=82589933$ i ma $24 862 048$ cyfr\footnote{\verb+https://www.mersenne.org/primes/?press=M82589933+}\\
+Najmniejszą liczbą Mersennea nie będącą liczbą pierwszą jest $2^{11}-1=2047=23\cdot89$
 
 \section{Teoria grafów}
-\textbf{Graf skierowany}: $G=(V,A)$ gdzie $V$-zbiór wierzchołków i $A\subseteq X\times X$-zbiór łuków.\\
+\textbf{Graf skierowany}: $G=(V,A)$ gdzie $V$-zbiór wierzchołków i $A\subseteq V\times V$-zbiór łuków.\\
 \textbf{Graf nieskierowany}: $G=(V,E)$ gdzie $E\subseteq \{\{v_i,v_j\}:\}v_1\in V \wedge v_j\in V$-zbiór krawędzi.\\
-Łuk (krawędź) $(x,y)\in A$ jest \textbf{incydentalny} z wierzchołkami $x$ i $y$.\\
+Łuk (krawędź) $(x,y)\in A$ jest \textbf{incydentny} z wierzchołkami $x$ i $y$.\\
 \textbf{Pętla własna}: łuk (krawędź) postaci $(x,x)$, gdzie $x\in V$. \\
-\textbf{Łańcuch}: sekwencja wierzchołków i krawędzi w grafu mająca końce w wierzchołkach $x, y$ i zawierającą $n$ krawędzi. Jeśli $x=y$ i $n>1$ to jest to \textbf{łańcuch zamknięty} w przeciwnym wypadku \textbf{łańcuch otwarty}.\\
+\textbf{Łańcuch}: sekwencja wierzchołków i krawędzi w grafie mająca końce w wierzchołkach $x, y$ i zawierającą $n$ krawędzi. Jeśli $x=y$ i $n>1$ to jest to \textbf{łańcuch zamknięty} w przeciwnym wypadku \textbf{łańcuch otwarty}.\\
 \textbf{Droga}: łańcuch, w którym nie powtarzają się krawędzie (\textbf{obwód}-zamknięta droga).\\
 \textbf{Ścieżka}: łańcuch, w którym nie powtarzają się wierzchołki (\textbf{cykl}-zamknięta ścieżka).\\
 Jeżeli w grafie (nieskierowanym) istnieje droga między danymi wierzchołkami to istnieje też ścieżka między nimi.\\
@@ -350,14 +351,28 @@ $G$ zawiera obwód Eulera $\Leftrightarrow$ $G$ jest spójny i każdy wierzchoł
 $G$ zawiera drogę Eulera $\Leftrightarrow$ $G$ jest spójny i dokładnie dwa wierchołki mają nieparzysty stopień. \\
 \textbf{Cykl Hamiltona} w grafie $G$ jest to cykl przechodzący przez każdy wierzchołek grafu dokładnie raz.\\
 \textbf{Ścieżka Hamiltona} ścieżka przechodząca przez każdy wierzchołek grafu dokładnie raz.\\
-\textbf{Graf Hamiltona}: Graf zawierający cykl hamiltona.
+\textbf{Graf Hamiltona}: Graf zawierający cykl hamiltona.\\
+$G$ zawiera ścieżkę Hamiltona $\Leftrightarrow$ $G$ jest spójny i $\forall_{x,y\in V} deg(x)+deg(y)\geq n-1$ ($deg(v)\geq \frac{n-1}{2}$)\\
+$G$ zawiera cykl Hamiltona $\Leftrightarrow$ $G$ jest spójny i $deg(x)+deg(y)\geq n$ dla wszystkich $x, y$ które nie sąsiadują ze sobą (czyli $deg(v)>\frac{n}{2}$, ew. $|E|\geq {{n-1}\choose{2}}+2$).\\
+Graf skierowany (spójny) zawiera obwód Eulera wtw. gdy $\forall_{v\in V} in(v)=out(v)$
+\subsection{Kolorowanie grafu}
+\textbf{Pokolorowanie grafu} to przydział każdemu wierzchołkowi koloru w taki sposób że wierzchołki połączone krawędzią mają przydzielone różne kolory.\\
+\textbf{Liczba chromatyczna}: minimalna liczba kolorów potrzebnych do pokolorowania grafu $G$ (oznaczana $\chi(G)$)\\
+\textbf{Wielomian chromatyczny} $P(G,\lambda)$ nazywamy funkcję przyporządkowującą grafowi $G$ oraz liczbie $\lambda\in\mathbb{P}$ maksymalną liczbę różnych pokolorowań grafu $G$ za pomocą co najwyżej $\lambda$ kolorów.
 \subsection{Drzewa}
 Graf nazywamy \textbf{drzewem} jeśli jest spójny i nie zawiera cykli.\\
 \textbf{Las}: graf składający się z kilku składowych, z których każda jest drzewem.\\
 \textbf{Drzewo rozpinające} grafu $G$: podgraf rozpinający, będący drzewem.\\
 W drzewie miedzy każdą parą wierzchołków istnieje dokładnie jedna scieżka.\\
 Graf nieskierowany jest spójny wtedy i tylko wtedy gdy posiada drzewo rozpinające.\\
-Dla każdego drzewa $T=(V,E)$ zachodzi $|V|=|E|+1$.
+Dla każdego drzewa $T=(V,E)$ zachodzi $|V|=|E|+1$.\\
+\textbf{Drzewo skierowane}: $G$ jeżeli graf nieskierowany skojarzony z $G$ jest drzewem.\\
+Jeżeli $G$ jest drzewem skierowanym, to nazywamy je \textbf{drzewem ukorzenionym} jeżeli sitnieje dokładnie jeden wierzchołek (nazywany korzeniem) o stopniu wejściowym równym $0$ oraz dla każdego innego wierzchołka $in(v)=1$\\
+\textbf{Liść}: wierchołek o stopniu 1 (w drzewie ukorzenionym $out(v)=0$).\\
+$v\in V$ znajduje się na poziomie $i$ w drzewie $T$, jeżeli ścieżka od korzenia do $v$ ma długość $i$.\\
+\textbf{Drzewo binarne}: dla każdego wierzhołka $v\in V$ zachodzi $out(v)\leq2$ (pełne drzewo binarne: $\forall_{v\in V} [out(v)=0\vee out(v)=2]$)\\
+\textbf{Wysokość drzewa}: najwyższy poziom (oznaczane $h$)\\
+\textbf{Drzewo zrównoważone}: każdy z liści znajduje się na poziomie $h-1$ lub $h$
 %coś o korzeniach...
 \section{Własności liczb całkowitych}
 $b|a$ wtw. $\exists_n:a=bn$, $b$ jest \textbf{dzielnikiem} $a$, natomiast $a$ jest \textbf{wielokrotnością} $b$.\\
