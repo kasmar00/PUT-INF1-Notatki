@@ -9,13 +9,14 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{enumerate}
+\usepackage{bigfoot}
 
 \DeclareRobustCommand{\Stirling}{\genfrac \{ \} {0pt}{}} %liczby stirlinga 2-giego rodzaju
 \DeclareRobustCommand{\stirling}{\genfrac [ ] {0pt}{}} %liczby stirlinga 1-szego rodzaju
 
 
 %opening
-\title{Matematyka Dyskretna-Kompendium-Kolokwium 1}
+\title{Matematyka Dyskretna-Notatka}
 \author{Marcin Kasznia}
 
 \begin{document}
@@ -29,16 +30,18 @@ W pliku zawarto opracowanie zagadnień poruszanych na ćwiczeniach i obowiązuj�
 
 \section{Logika}
 Łączniki logiczne \\
-Zdanie odwrotne: $q \to p$ jest zdaniem odwrotnym do $p \to q$ \\
-Zdanie przeciwstawne (kontrapozycja): $\neg q \to \neg p$ jest zdaniem przeciwstawnym do $p \to q$ \\
-Tautologia: zdanie prawdziwe niezależnie od wartości zdań składowych np. $p\to p$ \\
-Zdanie sprzeczne: zdanie fałszywe niezależnie od wartości zdań składowych np. $p \land \neg p $ \\
-Zdania logicznie równoważne: zdania które mają takie same wartości niezależnie od wartości zdań składowych ($P \Leftrightarrow Q $) \\
-Mówimy że zdanie $P$ implikuje logicznie zdanie $Q$ jeżeli $Q$ ma wartość prawda zawsze wtedy gdy $P$ ma wartość prawda ($P \Rightarrow Q$)\\
-Kwantyfikatory
-\subsection{prawa rachunku zdań? (str3 PF 1)}
+\textbf{Zdanie odwrotne}: $q \to p$ jest zdaniem odwrotnym do $p \to q$ \\
+\textbf{Zdanie przeciwstawne} (kontrapozycja): $\neg q \to \neg p$ jest zdaniem przeciwstawnym do $p \to q$ \\
+\textbf{Tautologia}: zdanie prawdziwe niezależnie od wartości zdań składowych np. $p\to p$ \\
+\textbf{Zdanie sprzeczne}: zdanie fałszywe niezależnie od wartości zdań składowych np. $p \land \neg p $ \\
+\textbf{Zdania logicznie równoważne}: zdania które mają takie same wartości niezależnie od wartości zdań składowych ($P \Leftrightarrow Q $) \\
+Mówimy że zdanie $P$ \textbf{implikuje logicznie} zdanie $Q$ jeżeli $Q$ ma wartość prawda zawsze wtedy gdy $P$ ma wartość prawda ($P \Rightarrow Q$)\\
+\textbf{Kwantyfikatory}\\
+Reguła \textbf{podstawienia}: Jeśli zdanie złożone $P$ jest tautologią i wszystkie wystąpienia pewnej zmiennej $p$ występującej w zdaniu $P$ zastąpimy zdaniem $R$ to otrzymane zdanie złożone $P_1$ będzie również tautologią. Jeżeli zdanie złożone $P$ zawiera zdanie $Q$, $R$ jest zdaniem takim, że $Q\Leftrightarrow R$ i jeśli w P zastąpimy jedno lub więcej wystąpień $Q$ przez $R$ to otrzymamy zdanie złożone $P_2$ takie, że $P \Leftrightarrow P_2$
+\subsection{prawa rachunku zdań (str3 PF 1)}
 
 \section{Teoria mnogości}
+\textbf{Pojęcia pierwotne}: zbioru oraz należenia do zbioru\\
 Zbiór określamy podając wszystkie elementy tego zbioru lub określając warunek który spełniają wszystkie (i tylko) elementy zbioru (np.: $A=\{x: x \in \mathbb{N} \land x \leq 20 \}$)\\
 \textbf{Szczególne zbiory}\\
 $\mathbb{P}-$zbiór liczb całkowitych dodatnich $(1, 2, 3,\dots)$ \\
@@ -47,7 +50,9 @@ $\mathbb{Z}-$zbiór liczb całkowitych $(\dots, -2, -1, 0, 1, 2,\dots)$ \\
 $\mathbb{Q}-$zbiór liczb wymiernych \\
 $\mathbb{R}-$zbiór liczb rzeczywistych \\
 $\mathbb{C}-$zbiór liczb zespolonych \\
-\textbf{Działania na zbiorach}: Suma, Iloczyn (Część wspólna), Różnica, Różnica symetryczna ($A \oplus B=(A\cup B)\setminus (A \cap B)$), Inkluzja (zawieranie) \\
+\textbf{Działania na zbiorach}: Suma, Iloczyn (Część wspólna), Różnica, Różnica symetryczna ($A \oplus B=(A\cup B)\setminus (A \cap B)$)\\
+\textbf{Inkluzja (zawieranie)}: $A\subseteq B \Leftrightarrow [(a \in A)\Rightarrow (a\in B)]$ ($A$ nazywamy podzbiorem $B$, $B$ nazywamy nadzbiorem $A$) \\
+\textbf{Podzbiór właściwy} jeżeli $A\subseteq B \wedge A\neq B$ $A$ to podzbiór właściwy ($A\subset B$)\\
 \textbf{Przestrzeń} to zbiór którego każdy zbiór jest podzbiorem \\
 \textbf{Dopełnienie zbioru} A do przestrzeni U określane jest jako $\bar A=U \setminus A$ \\
 \textbf{Zbiór pusty} jest podzbiorem każdego zbioru $\emptyset$ \\
@@ -79,7 +84,7 @@ Relacja \textbf{Liniowo porządukjąca zbiór $X$} to relacja jednoczesnie zwrot
 \textbf{Relacja równoważności}: jednoczesnie zwrotna, symetryczna i przechodnia (oznaczamy $ \sim $)
 
 \section{Funkcje}
-Relację $\rho \subseteq X \times Y$ spełniającą warunki: $\forall_{x\in X} \exists_{y \in Y} \langle x, y \rangle \in \rho $ oraz $\forall_{x\in X} \forall_{y \in Y} \forall_{z \in Y} \langle x,y \rangle \in \rho \wedge\langle x, z \rangle \in \rho \implies y=z$ nazywamy funkcją.\\
+Relację $\rho \subseteq X \times Y$ spełniającą warunki: $\forall_{x\in X} \exists_{y \in Y} \langle x, y \rangle \in \rho $ oraz $\forall_{x\in X} \forall_{y \in Y} \forall_{z \in Y} \langle x,y \rangle \in \rho \wedge\langle x, z \rangle \in \rho \Rightarrow y=z$ nazywamy funkcją.\\
 Zbiór $X$ nazywamy dziedziną funkcji $f$ i oznaczamy przez $D_f$. Każdy element $x \in X$ nazywamy argumentem funkcji $f$, natomiast $f(x)\in Y$ nazwyamy wartością funkcji $f$ dla argumentu $x$. \\
 
 Niech $f:X\rightarrow Y$ oraz $A \subseteq X$.\\
@@ -92,7 +97,15 @@ Jeżeli $R_f=Y$, tzn. jeżeli każdy element zbioru $Y$ jest przyporządkowany c
 \textbf{Funkcje złożone} (tu chyba nie trzeba dużo pisać, może dopisze później) \\
 \textbf{Funkcja podłoga} $\forall_{x\in \mathbb{R}} \lfloor x \rfloor=y\in \mathbb{Z}$ takie że $\{ y\leq x \wedge y+1>x \}$ \\
 \textbf{Funkcja sufit} $\forall_{x\in \mathbb{R}} \lceil x \rceil=y\in \mathbb{Z}$ takie że $\{ y\geq x \wedge y-1<x \}$
-\subsection{Rzędzy wielkosci funkcji uzupelnic!!!!}
+\subsection{Rzędzy wielkosci funkcji}
+\textbf{Notacja $O$} $f$ jest co najwyżej rzędu $g$ (ogranicza z góry)\\
+$O(g(N))=\{f(n):$ istnieją dodatnie stałe $c$ i $n_0$ takie, że $0\leq f(n) \leq cg(n)$ dla wszystkich $n \geq n_0 \}$\\
+\textbf{Notacja $o$} $f$ jest niższego rzędu niż $g$ \\
+\textbf{Notacja $\Omega$} $f$ jest niższego rzędu niż $g$\\
+\textbf{Notacja $\omega$} $f$ jest wyższego rzędu niż $g$ \\
+\textbf{Notacja $\Theta$} $f$ jest dokładnie rzędu $g$\\
+\verb+https://pl.wikipedia.org/wiki/Asymptotyczne_tempo_wzrostu+\\
+
 \section{Kombinatoryka}
 \textbf{Prawo sumy}: $|A \cup B|=|A|+|B|-|A \cap B|$ (liczba sposobów na jakie można wybrać element należący do jednego z dwu zbiorów) \\
 \textbf{Prawo iloczynu}: $|A\times B|=|A|*|B|$ liczba sposobów na jakie można wybrać uporządkowaną parę elementów jest równa liczbie możliwości na jakie można wybrac pierwszy element przemnożonej przez liczbe możliwości na jakie można wybrac drugi element 
@@ -153,7 +166,8 @@ ${{n}\choose{k}}={{n-1}\choose{k}}+{{n-1}\choose{k-1}}$ (reguła dodawania),
 $k{{n}\choose{k}}=n{{n-1}\choose{k-1}}$ (reguła pochłaniania), 
 ${{m+n}\choose{k}}=\sum_{s=0}^k {{n}\choose{s}}{{n}\choose{k-s}}$ (tożsamość Cauchy'ego) \\
 \textbf{Trójkąt Pascala}: metoda obliczania wartości współczynnika Newtona (reguła dodawania)\\
-\textbf{Współczynnik wielomianowy}: ${{n}\choose{k_1, k_2, \dots ,k_r}}={{n}\choose{k_1}}{{n-k_1}\choose{k_2}}{{n-k_1-k_2}\choose{k_3}}\dots {{n-k_1-\hdots -k_{r-1}}\choose{k_r}}=\frac{n!}{k_1!k_2!\dots k_r!}$, występuje w rozwinięciu wielomianu $(x_1+x_2+\dots +x_r)^n=\sum {{n}\choose{k_1, k_2, \dots ,k_r}}x_1^{k_1}x_2^{k_2}\dots x_ r^{k_r}$
+\textbf{Współczynnik wielomianowy}: ${{n}\choose{k_1, k_2, \dots ,k_r}}={{n}\choose{k_1}}{{n-k_1}\choose{k_2}}{{n-k_1-k_2}\choose{k_3}}\dots {{n-k_1-\hdots -k_{r-1}}\choose{k_r}}=\frac{n!}{k_1!k_2!\dots k_r!}$, występuje w rozwinięciu wielomianu $(x_1+x_2+\dots +x_r)^n=\sum {{n}\choose{k_1, k_2, \dots ,k_r}}x_1^{k_1}x_2^{k_2}\dots x_ r^{k_r}$\\
+\textbf{Zasada dobrego uporządkowania}: każdy niepiusty zbiór jest dobrze uporządkowany wtw. gdy zawiera on element najmniejszy
 \subsection{Pierwsza zasada indukcji matematycznej}
 Inaczej \textbf{Zasada skończonej indukcji matematycznej} \\
 Jeśli $S(1)$ jest prawdziwe i dla dowolnego $k \in \mathbb{P}$, $S(k+1)$ jest prawdziwe, jeśli $S(k)$ jest prawdziwe, to $S(n)$ jest prawdziwe dla wszystkich $n \in \mathbb{P}$ \\ %formalny zapis u Sterny na wykładzie
@@ -173,6 +187,7 @@ Zasadę tą stosuje się:
  \item jeśli krok indukcyjny nie jest prawdziwy dla pewnych początkowych wartości $k$
  \item w analizie definicji rekurencyjnych, w których pewne wyrazy określone są za pomocą wyrazów innych niż bezpośrednio poprzedzające
 \end{itemize}
+\subsection{Niezmienniki pętli ?}
 
 \section{Rekurencja}
 Ciąg jest zdefiniowany rekurencyjnie jeśli: określony jest skońcozny zbiór wyrazów ciągu (warunek początkowy), pozostałe wyrazy zdefiniowane są za pomocą poprzednich wyrazów (warunek rekurencyjny). Poprawność definicji dowodzi się w oparciu o indukcję matematyczną.
@@ -262,6 +277,16 @@ Suma każdego wiersza w trójkącie wynosi $n!$ \\
 \end{tabular}
 [1 3 4 7] [2 8 5] [6 9] \\
 Każda permutacja definuje układ cykli i każdy układ cykli odpowiada dokładnie jednej permutacji.
+\subsection{Liczby Eulera pierwszego rzędu}
+$\left<  \begin{matrix} n \\ k\end{matrix} \right>$ oznacza liczbę permutacji zbioru $\{1,2,\dots, n\}$ mających k wzniesień, tzn. k pozycji na których $\pi_j<\pi_{j+1}$\\
+$\left<  \begin{matrix} n \\ 0\end{matrix} \right>=1$,
+$\left<  \begin{matrix} n \\ n\end{matrix} \right>=0$,
+$\left<  \begin{matrix} n \\ k\end{matrix} \right>=(k+1)\left<  \begin{matrix} n-1 \\ k\end{matrix} \right> +(n-k) \left<  \begin{matrix} n-1 \\ k-1\end{matrix} \right>$ \\
+\subsection{Liczby Eulera drugiego rzędu}
+$\left<\left<  \begin{matrix} n \\ k\end{matrix} \right>\right>$ oznacza liczbę permutacji multizbioru $\{1,1,2,2,\dots,n,n\}$ takich, że między kolejnymi wystąpenieniami liczby $m$ pojawiają się tylko liczby większe od $m$ i liczba wzniesień wynosi $k$.\\
+$\left<\left<  \begin{matrix} n \\ 0\end{matrix} \right>\right>=1$,
+$\left<\left<  \begin{matrix} n \\ n\end{matrix} \right>\right>=0$,
+$\left<\left<  \begin{matrix} n \\ k\end{matrix} \right>\right>=(k+1)\left<\left<  \begin{matrix} n-1 \\ k\end{matrix} \right>\right> +(2n-1-k) \left<\left<  \begin{matrix} n-1 \\ k-1\end{matrix} \right>\right>$ \\
 \subsection{Liczby harmoniczne} %definicja: k-ta harmoniczna wytwarzana przez strunę skrzypcową jest tonem podstawowym wytwarzanym przez strunę o długości równej 1/k-tej długości struny wyjściowej (ton fali o długości  1/k jest k-tą harmoniczną fali o długości 1)
 Definicja rekurencyjna: $\forall_{n\geq1}H_{n+1}=H_n+\frac{1}{n+1}, H_1=1$ \\
 Definicja jawna: $H_n=\sum_{k=1}^n\frac{1}{k}$ \\
@@ -274,6 +299,14 @@ Definicja jawna: $F_n=\frac{1}{\sqrt{5}}[(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sq
 \subsection{Liczby Lucasa}
 Definicja: $\forall_{n\geq2} L_n=L_{n-1} +L_{n-2}, L_0=2, L_1=1$\\
 Własności: $\forall_{n\in\mathbb{P}} L_n=F_{n-1} +F_{n+1}$, $\sum_{i=0}^n l_i=L_{n+2}-1$
+\subsection{Liczby Euklidesa}
+$e_n=e_1\cdot e_2 \cdot \hdots \cdot e_{n-1} + 1$, $e_1=1$\\
+Liczby euklidesa są względnie pierwsze $\gcd(e_n,e_m)=1$
+\subsection{Liczby Mersennea}
+$2^p-1$ gdzie $p$ jest liczbą pierwszą.\\
+Rozwiązanie problemu wież z Hanoi (tzn. liczbę ruchów koniecznych do przełożenia $p$ krążków, dla $p$ będących liczbami pierwszymi).\\
+Istnieje niewiele liczb Mersennea będących liczbami pierwszymi ''
+Znanych jest 59\footnote{prof. Chris K. Caldwell \verb+https://primes.utm.edu/mersenne/index.html#known+} liczb pierwszych Mersennea, największa odpowiada wykładnikowi $p=82589933$ i ma $24 862 048$ cyfr\footnote{\verb+https://www.mersenne.org/primes/?press=M82589933+}
 
 \section{Teoria grafów}
 \textbf{Graf skierowany}: $G=(V,A)$ gdzie $V$-zbiór wierzchołków i $A\subseteq X\times X$-zbiór łuków.\\
@@ -378,7 +411,7 @@ Jeżeli $a,b\in\mathbb{P}$ oraz $p$ jest liczbą pierwszą, to $p|ab\Rightarrow 
 \subsection{Zasada włączania i wyłączania}
 	$|A_1\cup A_2| = |A_1| + |A_2| -|A_1\cap A_2|$ \\
 	$|A_1\cup A_2\cup A_3| = |A_1| + |A_2| + |A_3|-|A_1\cap A_2| -|A_1\cap A_3| -|A_2\cap A_3|+ |A_1\cap A_2\cap A_3|$\\
-	Aby znaleźć liczbę elementów zbioru $|A_1\cap A_2\cap \hdots \cap A_n|$ należy zanalizować wszystkie możliwe przecięcia (części wspólne) zbiorów z rodziny $(A_1, A_2, \dots ,A_n)$ i odać liczność przecięć nieparzystej liczby zbiorów oraz odjąć liczność przecięć nieparzystej liczby zbiorów.\\
+	Aby znaleźć liczbę elementów zbioru $|A_1\cap A_2\cap \hdots \cap A_n|$ należy zanalizować wszystkie możliwe przecięcia (części wspólne) zbiorów z rodziny $(A_1, A_2, \dots ,A_n)$ i dodać liczność przecięć nieparzystej liczby zbiorów oraz odjąć liczność przecięć nieparzystej liczby zbiorów.\\
 	$\left| \bigcup\limits_{i=1}^n A_i\right|=\sum\limits_{I\in\mathbb{P}_+(I)} (-1)^{|I|+1} \left| \bigcap\limits_{i\in I} A_i \right|$
 \subsection{Zasada szufladkowa Dirichleta}
 	Jeśli $m$ przemiotów umieszcza się w $n$ szufladkach i $m>n$, to do jednej szufladki trafi więcej niż jeden przedmiot.\\
