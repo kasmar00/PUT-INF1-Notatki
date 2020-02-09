@@ -404,7 +404,7 @@ Dla dowolnych $a,b,c\in \mathbb{Z}$:
 		r_{k-1}=q_{k+1}r_k
 	\end{matrix}$$\\
 	ostatnia niezerowa reszta $r_k=\gcd(1,b)$\\
-\textbf{Rówananie diofantyczne}: równanie liniowe wymagające całkowitoliczbowych roziązań.\\
+\textbf{Równanie diofantyczne}: równanie liniowe wymagające całkowitoliczbowych roziązań.\\
 $ax+by=c$ ma rozwiązanie całkowite wtw. gdy $gcd(a,b)|c$
 \subsection{Najmniejsza wspólna wielokrotność}
 \textbf{wspólna wielokrotność}: $c$ jest wspólną wielokrotnością $a$ i $b$ jeśli $c$ jest wielokrotnością zarówno $a$ jak i $b$.\\
@@ -417,11 +417,27 @@ Jeżeli $a,b\in\mathbb{P}$ oraz $p$ jest liczbą pierwszą, to $p|ab\Rightarrow 
 \section{Transwersale}
 \subsection{Twierdzenie Halla-wersja małżeńska}W grupie kobiet każda kobiera może wybrac męża spośród mężczyzn, których zna, wtw. gdy w każdym podzbiorze kobiet o liczności $r$ kobiety te znają conajmniej $r$ mężczyzn.\\
 \textbf{Rodzina zbiorów} jest to uporządkowana lista zbiorów $A=(A_1,A_2,A_3,\hdots,A_n)$\\
-\textbf{Transwersala} rodziny $A$ jest to zbiór $Y$, gdzie $|Y|=n$, którego elementy mogą zostać zapisane w pewnym porządku, np. $Y=\{ a_1, a_2, a_3,\hdots, a_n\}$ w ten sposób że $a_i\in A_i$.
+\textbf{Transwersala} rodziny $A$ jest to zbiór $Y$, gdzie $|Y|=n$, którego elementy mogą zostać zapisane w pewnym porządku, np. $Y=\{ a_1, a_2, a_3,\hdots, a_n\}$ w ten sposób że $a_i\in A_i$.\\
+\textbf{Postać transwersalowa}: Rodzina $A=(A_1, A_2, \dots, A_n)$ ma transwersalę $\Leftrightarrow$ $\left| \bigcup\limits_{i\in I}A_i\right|\geq |I|$\\
+\textbf{Twierdzenie Halla w postaci grafowej, macierzowej}\\
+Niech $A=(A_1, A_2, \dots, A_n)$ będzie rodziną zbiorów i niech $P\subseteq A_1 \cup A_2\cup \dots \cup A_n$ wówczas $A$ ma transwersalę która zawiera zbiór $P$ $\Leftrightarrow$ $A$ ma transweralę oraz $\left| P \setminus \left(\bigcup\limits_{i\in I}A_i\right)\right|\geq |I|$\\
+\textbf{Wersja haremowa}: Niech $b_1, b_2, \dots , b_n$ będą nieujemnymi liczbami całkowitymi i niech $D_1, D_2, \dots, D_n$ oznaczają kobiety. Kobieta $D_i$ chce mieć $b_1$ mężów. Żaden mężczyzna nie może ożenić się z więcej niż jedną kobietą. Wszystkie życzenia kobiet zostaną spełnione wtw. gdy kobiety z dowolnego podzbioru $D_{i_1}, D_{i_2}, \dots, D_{i_s}$ znają conajmniej $b_{i_1}, b_{i_2}, \dots, b_{i_s}$ mężczyzn.
 \subsection{Turnieje}
-\textbf{Turniej} z udziałem $n$ graczy oanzacoznych kolejenymi liczbami pozytywnymi, jest zbiorem $n\choose2$ uporządkowanych par zawodników. Pary te mogą być traktowane jako wyniki gier między graczami, przy czym pierwsza liczba oznacza zwycięzce gry.\\
+\textbf{Turniej} z udziałem $n$ graczy oznaczonych kolejenymi liczbami pozytywnymi, jest zbiorem $n\choose2$ uporządkowanych par zawodników. Pary te mogą być traktowane jako wyniki gier między graczami, przy czym pierwsza liczba oznacza zwycięzce gry.\\
 \textbf{Twierdzenie Landaua}: Niech $b_1, b_2,\hdots,b_n$ będą liczbami całkowitymi. Liczby te są wynikiem pewnego turnieju z udziałem $n$ graczy wtw. gdy $b_1+b_2+\hdots+b_n={n\choose2}$ oraz dla $1\leq r \leq n$ każde $r$ spośród liczb $b_1, b_2,\hdots,b_n$ sumuje się do co najmniej $r\choose2$
-%minimaks, harem, przepływy, przekroje itp...
+\subsection{Twierdzenia minimaksowe}
+Niech $M$ będzie macierzą zero--jedynkową wymiaru $m\times n$. Wówczas minimalna liczba wierszy i kolumn zawierających wszystkie jedynki macierzy $M$ jest równa maksymalnej liczbie jedynek, z których żadne dwie nie leżą w jednym wierszu ani w jednej kolumnie.\\
+(Skojarzenie w grafie jest to zbiór krawędzi, z których żadne dwie nie maja wspólnego wierzchołka końcowego)\\
+Niech $G=(V_1, V_2, E)$ będzie grafem dwudzielnym. Wówczas minimalna liczba wierzchołków, wśród których jest co najmniej jeden koniec każdej krawędzi równa jest maksymalnej liczbie krawędzi w skojarzeniu\\
+(Zbiór ścieżek w grafie jest rozłączny jeżeli żadne dwie z nich nie maja wspólnego wierzchołka)\\
+W grafie $G=(V, E)$ zbiór wierchołków $S\subset V$ rozdiela zbiór $X\subset V$ od zbioru $Y\subset V$, jeżeli każda ścieżka między $X$ i $Y$ przechodzi przez wierzchołek ze zbioru $S$.\\
+\textbf{Twierdzenie Mengera}: Niech $G=(V,E)$ będzie dowolnym grafem i niech $X, Y\subseteq V$. Wówczas minimalna liczba wierzchołków, które rodzielają $X$ od $Y$ równa jest maksymalnej liczbie rozłącznych ścieżek między $X$ i $Y$.
+\subsection{Przepływy}
+\textbf{Sieć} $N=(V,c)$ jest niepustym sbiorem wierzhołków $V$ takim, że każdej uporządkowanej parze wierzchołków $(v,w)\in V\times V$ przyporządkowana jest nieujemna liczba rzeczywista $x(v,w)$ nazywana \textbf{przepustowością} łuku $(v,w)$.\\
+Dla danej sieci $N=(V,c)$ \textbf{przepływ przez łuk} $(v,w)$ jest liczbą $f(v,w)$ spełniającą nierówności $0\geq f(v,w) \geq c(v,w)$. Jeżeli wszystkie przepływy przez łuki spełniają następujące warunki: przepływ przez każdy łuk wchodzący do wierzhołka $x$ ma wartość 0, w kazdym wierzhołku $v\in V$ oprócz $x$ i $y$ całkowity przepływ przez łuki wchodzące do $v$ równa się całkowite,u przepływowi przez łuki wychodzące z $v$, przepływ przez każdy łuk wychodzący z wierzchołka $y$ ma wartość 0, to funkcja $f$ nazywana jest \textbf{przepływem z $x$ do $y$}. Ponadto, $x$ nazywane jest \textbf{źródłem} przepływu, a $y$ \textbf{ujściem}.\\
+
+
+%przepływy, przekroje
 \section{Zaawansowane metody zliczania}
 \subsection{Zasada włączania i wyłączania}
 	$|A_1\cup A_2| = |A_1| + |A_2| -|A_1\cap A_2|$ \\
@@ -442,5 +458,7 @@ Jeżeli $a,b\in\mathbb{P}$ oraz $p$ jest liczbą pierwszą, to $p|ab\Rightarrow 
 \section{Kwadraty łacińskie}
 \section{Funkcje tworzące}
 \section{Wielomiany szachowe}
+\section{Teoria Grafów II}
+\section{Algebry Bool'a}
 
 \end{document}
