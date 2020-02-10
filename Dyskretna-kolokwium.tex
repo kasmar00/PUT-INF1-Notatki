@@ -80,7 +80,7 @@ $\rho \subseteq X \times X$ (Relacja w zbiorze $X$)\\
 \textbf{Spójna}: $\forall_{x \in X}\forall_{y\in X} \langle x,y \rangle\in\rho \vee \langle y,x\rangle\in\rho$\\
 \textbf{Przeciwzwrotna}: $\nexists_{x\in X} \langle x,x\rangle \in \rho$\\
 \\
-Relacja \textbf{Liniowo porządukjąca zbiór $X$} to relacja jednoczesnie zwrotna, przechodnia, antysymetryczna i spójna \\
+Relacja \textbf{Liniowo porządkująca zbiór $X$} to relacja jednoczesnie zwrotna, przechodnia, antysymetryczna i spójna \\
 \textbf{Relacja równoważności}: jednoczesnie zwrotna, symetryczna i przechodnia (oznaczamy $ \sim $)
 
 \section{Funkcje}
@@ -420,7 +420,7 @@ Jeżeli $a,b\in\mathbb{P}$ oraz $p$ jest liczbą pierwszą, to $p|ab\Rightarrow 
 \textbf{Transwersala} rodziny $A$ jest to zbiór $Y$, gdzie $|Y|=n$, którego elementy mogą zostać zapisane w pewnym porządku, np. $Y=\{ a_1, a_2, a_3,\hdots, a_n\}$ w ten sposób że $a_i\in A_i$.\\
 \textbf{Postać transwersalowa}: Rodzina $A=(A_1, A_2, \dots, A_n)$ ma transwersalę $\Leftrightarrow$ $\left| \bigcup\limits_{i\in I}A_i\right|\geq |I|$\\
 \textbf{Twierdzenie Halla w postaci grafowej, macierzowej}\\
-Niech $A=(A_1, A_2, \dots, A_n)$ będzie rodziną zbiorów i niech $P\subseteq A_1 \cup A_2\cup \dots \cup A_n$ wówczas $A$ ma transwersalę która zawiera zbiór $P$ $\Leftrightarrow$ $A$ ma transweralę oraz $\left| P \setminus \left(\bigcup\limits_{i\in I}A_i\right)\right|\geq |I|$\\
+Niech $A=(A_1, A_2, \dots, A_n)$ będzie rodziną zbiorów i niech $P\subseteq A_1 \cup A_2\cup \dots \cup A_n$ wówczas $A$ ma transwersalę która zawiera zbiór $P$ $\Leftrightarrow$ $A$ ma transweralę oraz $\left| P \setminus \left(\bigcup\limits_{i\in I}A_i\right)\right|\leq n-|I|$\\
 \textbf{Wersja haremowa}: Niech $b_1, b_2, \dots , b_n$ będą nieujemnymi liczbami całkowitymi i niech $D_1, D_2, \dots, D_n$ oznaczają kobiety. Kobieta $D_i$ chce mieć $b_1$ mężów. Żaden mężczyzna nie może ożenić się z więcej niż jedną kobietą. Wszystkie życzenia kobiet zostaną spełnione wtw. gdy kobiety z dowolnego podzbioru $D_{i_1}, D_{i_2}, \dots, D_{i_s}$ znają conajmniej $b_{i_1}, b_{i_2}, \dots, b_{i_s}$ mężczyzn.
 \subsection{Turnieje}
 \textbf{Turniej} z udziałem $n$ graczy oznaczonych kolejenymi liczbami pozytywnymi, jest zbiorem $n\choose2$ uporządkowanych par zawodników. Pary te mogą być traktowane jako wyniki gier między graczami, przy czym pierwsza liczba oznacza zwycięzce gry.\\
@@ -442,7 +442,7 @@ Dla danej sieci $N=(V,c)$ \textbf{przepływ przez łuk} $(v,w)$ jest liczbą $f(
 \subsection{Zasada włączania i wyłączania}
 	$|A_1\cup A_2| = |A_1| + |A_2| -|A_1\cap A_2|$ \\
 	$|A_1\cup A_2\cup A_3| = |A_1| + |A_2| + |A_3|-|A_1\cap A_2| -|A_1\cap A_3| -|A_2\cap A_3|+ |A_1\cap A_2\cap A_3|$\\
-	Aby znaleźć liczbę elementów zbioru $|A_1\cap A_2\cap \hdots \cap A_n|$ należy zanalizować wszystkie możliwe przecięcia (części wspólne) zbiorów z rodziny $(A_1, A_2, \dots ,A_n)$ i dodać liczność przecięć nieparzystej liczby zbiorów oraz odjąć liczność przecięć nieparzystej liczby zbiorów.\\
+	Aby znaleźć liczbę elementów zbioru $|A_1\cup A_2\cup \hdots \cup A_n|$ należy zanalizować wszystkie możliwe przecięcia (części wspólne) zbiorów z rodziny $(A_1, A_2, \dots ,A_n)$ i dodać liczność przecięć nieparzystej liczby zbiorów oraz odjąć liczność przecięć parzystej liczby zbiorów.\\
 	$\left| \bigcup\limits_{i=1}^n A_i\right|=\sum\limits_{I\in\mathbb{P}_+(I)} (-1)^{|I|+1} \left| \bigcap\limits_{i\in I} A_i \right|$
 \subsection{Zasada szufladkowa Dirichleta}
 	Jeśli $m$ przemiotów umieszcza się w $n$ szufladkach i $m>n$, to do jednej szufladki trafi więcej niż jeden przedmiot.\\
